@@ -29,10 +29,22 @@
         }
       ]
     },
+    "views": {
+      "explorer": [
+        {
+          "id": "nodeDependencies",
+          "name": "Node Dependencies"
+        }
+      ]
+    },
     "viewsWelcome": [
       {
         "contents": "You can have paragraphs of text here. You can have [links](https://code.visualstudio.com) to external sources or [internal commands](command:welcome-view-content-sample.hello).\nUse new lines to have new paragraphs.\nPlace a link alone in a paragraph to make it a button:\n[Hello](command:welcome-view-content-sample.hello)",
         "view": "workbench.explorer.emptyView"
+      },
+      {
+        "contents": "Welcome to node dependencies.\n[Hello](command:welcome-view-content-sample.hello)",
+        "view": "nodeDependencies"
       }
     ]
   },

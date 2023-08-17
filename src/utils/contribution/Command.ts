@@ -13,7 +13,9 @@ type Command<T extends string> = CommandOptions<T> &
     href: string;
   };
 
-export default function Command(opts: CommandOptions<string>): Command<string> {
+export default function Command<T extends string = string>(
+  opts: CommandOptions<T>
+): Command<T> {
   return {
     ...opts,
     href: `command:${opts.id}`,

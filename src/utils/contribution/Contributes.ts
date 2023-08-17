@@ -7,6 +7,11 @@ export default interface Contributes {
       when: string;
     };
   };
+  views: {
+    explorer: {
+      name: string;
+    };
+  };
   viewsWelcome?: {
     view: string;
   };

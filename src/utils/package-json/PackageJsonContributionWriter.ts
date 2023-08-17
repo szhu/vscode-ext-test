@@ -23,6 +23,13 @@ packageContents.contributes = {
     ),
   },
 
+  views: {
+    explorer: contributions.treeDataProviders.flatMap((treeDataProvider) => {
+      const explorer = treeDataProvider.contributes?.views?.explorer;
+      return explorer ? [{ id: treeDataProvider.id, ...explorer }] : [];
+    }),
+  },
+
   viewsWelcome: contributions.viewsWelcome.flatMap((view) =>
     view.contributes?.viewsWelcome
       ? [{ contents: view.contents, ...view.contributes.viewsWelcome }]
