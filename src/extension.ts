@@ -1,12 +1,7 @@
-import * as vscode from "vscode";
+import { ExtensionContext } from "vscode";
+import CommandWelcome from "./commands/welcome/CommandWelcome";
+import useSubscription from "./utils/subscription/useSubscription";
 
-export function activate(context: vscode.ExtensionContext) {
-  const disposable = vscode.commands.registerCommand(
-    "welcome-view-content-sample.hello",
-    async () => {
-      vscode.window.showInformationMessage("Hello world!");
-    }
-  );
-
-  context.subscriptions.push(disposable);
+export function activate(context: ExtensionContext) {
+  useSubscription(context, CommandWelcome);
 }
