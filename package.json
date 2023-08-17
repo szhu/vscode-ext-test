@@ -32,8 +32,23 @@
     "views": {
       "explorer": [
         {
-          "id": "nodeDependencies",
-          "name": "Node Dependencies"
+          "name": "Node Dependencies",
+          "id": "nodeDependencies"
+        }
+      ],
+      "mutableai-main": [
+        {
+          "name": "Mooo",
+          "id": "mutableai.view.welcome"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "mutableai-main",
+          "title": "Mooo",
+          "icon": "$(file-code)"
         }
       ]
     },
@@ -45,6 +60,10 @@
       {
         "contents": "Welcome to node dependencies.\n[Hello](command:welcome-view-content-sample.hello)",
         "view": "nodeDependencies"
+      },
+      {
+        "contents": "Moooo\n[Do Moo](command:welcome-view-content-sample.hello)\n​\nMooooo\n[Do Moo](command:welcome-view-content-sample.hello)\n​\nMooooooooooooo\n[Do Moo](command:welcome-view-content-sample.hello)\n​\nGot feedback? [Let us know.](command:welcome-view-content-sample.hello)",
+        "view": "mutableai.view.welcome"
       }
     ]
   },

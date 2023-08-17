@@ -5,6 +5,11 @@ import { contributions } from "../../extension";
 const packageJson = fs.readFileSync("./package.json", "utf-8");
 const packageContents = JSON.parse(packageJson);
 
+type ContributesView = {
+  id: string;
+  name: string;
+}[];
+
 // Perform modifications.
 packageContents.contributes = {
   NOTE: "This section is generated from a script. Do not edit manually.",
@@ -23,10 +28,30 @@ packageContents.contributes = {
     ),
   },
 
-  views: {
-    explorer: contributions.treeDataProviders.flatMap((treeDataProvider) => {
-      const explorer = treeDataProvider.contributes?.views?.explorer;
-      return explorer ? [{ id: treeDataProvider.id, ...explorer }] : [];
+  views: (() => {
+    const views: Record<string, ContributesView> = {};
+    for (const treeDataProvider of contributions.treeDataProviders) {
+      if (!treeDataProvider.contributes?.views) {
+        continue;
+      }
+
+      for (const [viewId, view] of Object.entries(
+        treeDataProvider.contributes?.views
+      )) {
+        if (!views[viewId]) {
+          views[viewId] = [];
+        }
+        views[viewId].push({ ...view, id: treeDataProvider.id });
+      }
+    }
+    return views;
+  })(),
+
+  viewsContainers: {
+    activitybar: contributions.viewsContainers.flatMap((viewContainer) => {
+      const activitybar =
+        viewContainer.contributes?.viewsContainers?.activitybar;
+      return activitybar ? [{ id: viewContainer.id, ...activitybar }] : [];
     }),
   },
 
