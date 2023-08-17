@@ -7,6 +7,8 @@ const packageContents = JSON.parse(packageJson);
 
 // Perform modifications.
 packageContents.contributes = {
+  NOTE: "This section is generated from a script. Do not edit manually.",
+
   commands: contributions.commands.flatMap((command) =>
     command.contributes?.commands
       ? [{ command: command.id, ...command.contributes.commands }]
