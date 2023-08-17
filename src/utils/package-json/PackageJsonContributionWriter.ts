@@ -63,7 +63,7 @@ packageContents.contributes = {
 };
 
 // Write the new package.json.
-const newPackageJson = JSON.stringify(packageContents, null, 2);
+const newPackageJson = JSON.stringify(packageContents, null, 2) + "\n";
 fs.writeFileSync("./package.json", newPackageJson, "utf-8");
 
 // Alternate method:
