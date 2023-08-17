@@ -1,7 +1,13 @@
 import { ExtensionContext } from "vscode";
-import CommandWelcome from "./commands/welcome/CommandWelcome";
-import useSubscription from "./utils/subscription/useSubscription";
+import WelcomeCommand from "./contributions/commands/WelcomeCommand";
+import TestWelcomeView from "./contributions/viewsWelcome/TestWelcomeView";
+import useContribution from "./utils/contribution/useContribution";
 
 export function activate(context: ExtensionContext) {
-  useSubscription(context, CommandWelcome);
+  useContribution(context, WelcomeCommand);
 }
+
+export const contributions = {
+  commands: [WelcomeCommand],
+  viewsWelcome: [TestWelcomeView],
+};
