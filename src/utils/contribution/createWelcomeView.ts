@@ -1,11 +1,11 @@
 import Contributes from "./Contributes";
 
-interface WelcomeView {
+export interface WelcomeView {
   contributes?: Pick<Contributes, "viewsWelcome">;
   contents: string;
 }
 
-export default function WelcomeView(opts: WelcomeView): WelcomeView {
+export default function createWelcomeView(opts: WelcomeView): WelcomeView {
   // The welcome view contents appear to support Markdown, but it's actually not
   // exactly Markdown. Let's get back some of the Markdown behavior that we're
   // used to.

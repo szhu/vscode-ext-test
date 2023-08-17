@@ -1,7 +1,7 @@
-import WelcomeView from "../../utils/contribution/WelcomeView";
-import WelcomeCommand from "../commands/WelcomeCommand";
+import WelcomeCommand from "../../command-test/contributions/WelcomeCommand";
+import createWelcomeView from "../../utils/contribution/createWelcomeView";
 
-export default WelcomeView({
+export default createWelcomeView({
   contributes: {
     viewsWelcome: {
       view: "workbench.explorer.emptyView",

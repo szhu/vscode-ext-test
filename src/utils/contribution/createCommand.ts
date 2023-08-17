@@ -8,7 +8,7 @@ interface CommandOptions<T extends string> {
   action: () => void;
 }
 
-type Command<T extends string> = CommandOptions<T> &
+export type Command<T extends string> = CommandOptions<T> &
   Activatable & {
     href: string;
   };

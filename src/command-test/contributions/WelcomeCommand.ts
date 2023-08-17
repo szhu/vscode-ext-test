@@ -1,7 +1,7 @@
 import { window } from "vscode";
-import Command from "../../utils/contribution/Command";
+import createCommand from "../../utils/contribution/createCommand";
 
-export default Command({
+export default createCommand({
   id: "welcome-view-content-sample.hello",
   contributes: {
     commands: { title: "Hello World" },

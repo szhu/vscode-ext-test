@@ -9,12 +9,11 @@ interface TreeDataProviderOptions<Id extends string, T> {
   getChildren(element?: T): Thenable<T[]>;
 }
 
-type TreeDataProvider<Id extends string, T> = TreeDataProviderOptions<Id, T> &
-  Activatable & {
-    provider: vscode.TreeDataProvider<T>;
-  };
+export type TreeDataProvider<Id extends string, T> = unknown &
+  TreeDataProviderOptions<Id, T> &
+  Activatable & { provider: vscode.TreeDataProvider<T> };
 
-export default function TreeDataProvider<
+export default function createTreeDataProvider<
   Id extends string = string,
   T = unknown
 >(opts: TreeDataProviderOptions<Id, T>): TreeDataProvider<Id, T> {

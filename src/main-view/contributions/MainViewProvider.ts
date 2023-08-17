@@ -1,8 +1,8 @@
 import * as vscode from "vscode";
-import TreeDataProvider from "../../utils/contribution/TreeDataProvider";
-import MainViewContainer from "../viewsContainers/MainViewContainer";
+import createTreeDataProvider from "../../utils/contribution/createTreeDataProvider";
+import MainViewContainer from "./MainViewContainer";
 
-export default TreeDataProvider({
+export default createTreeDataProvider({
   id: "mutableai.view.welcome",
 
   contributes: {

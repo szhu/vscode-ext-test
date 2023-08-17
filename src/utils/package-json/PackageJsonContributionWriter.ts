@@ -1,5 +1,5 @@
 import * as fs from "fs";
-import { contributions } from "../../extension";
+import { contributions } from "../../_/extension";
 
 // // Read package.json.
 const packageJson = fs.readFileSync("./package.json", "utf-8");

@@ -1,8 +1,9 @@
 import * as fs from "fs";
 import * as path from "path";
 import * as vscode from "vscode";
-import TreeDataProvider from "../../utils/contribution/TreeDataProvider";
+import createTreeDataProvider from "../../utils/contribution/createTreeDataProvider";
 import rootPath from "../../utils/vscode/rootPath";
+
 /**
  * Given the path to package.json, read all its dependencies and devDependencies.
  */
@@ -56,7 +57,7 @@ function pathExists(p: string): boolean {
   return true;
 }
 
-export default TreeDataProvider({
+export default createTreeDataProvider({
   id: "nodeDependencies",
 
   contributes: {

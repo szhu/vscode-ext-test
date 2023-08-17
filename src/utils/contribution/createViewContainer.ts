@@ -1,6 +1,6 @@
 import Contributes from "./Contributes";
 
-interface ViewContainer {
+export interface ViewContainer {
   id: string;
   contributes?: Pick<Contributes, "viewsContainers">;
 }

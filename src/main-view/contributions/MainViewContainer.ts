@@ -1,6 +1,6 @@
-import ViewContainer from "../../utils/contribution/ViewContainer";
+import createViewContainer from "../../utils/contribution/createViewContainer";
 
-export default ViewContainer({
+export default createViewContainer({
   id: "mutableai-main",
   contributes: {
     viewsContainers: {

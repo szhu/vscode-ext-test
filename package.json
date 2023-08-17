@@ -12,7 +12,7 @@
     "Other"
   ],
   "activationEvents": [],
-  "main": "./out/extension.js",
+  "main": "./out/_/extension.js",
   "contributes": {
     "NOTE": "This section is generated from a script. Do not edit manually.",
     "commands": [
